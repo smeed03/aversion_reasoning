@@ -1,0 +1,42 @@
+[
+  {
+    "id": "S1",
+    "description": "Vegetarian-friendly, mid-price, dislikes dog-friendly and bar-type places",
+    "preferences": {
+      "categories_any_of": ["Vegetarian", "Vegan", "Healthy"],
+      "price_in": ["$", "$$"],
+      "min_rating": 4.0
+    },
+    "aversions": {
+      "dog_friendly": true,
+      "categories_any_of": ["Sports Bar", "Bar", "Pub"]
+    }
+  },
+  {
+    "id": "S2",
+    "description": "Romantic date, wants outdoor seating, dislikes kid-friendly and chain restaurants",
+    "preferences": {
+      "tags_any_of": ["romantic", "date-night"],
+      "outdoor_seating": true,
+      "price_in": ["$$", "$$$"],
+      "min_rating": 4.3
+    },
+    "aversions": {
+      "tags_any_of": ["kid-friendly", "family"],
+      "is_chain": true
+    }
+  },
+  {
+    "id": "S3",
+    "description": "Wants spicy and authentic food, avoids touristy or formal places",
+    "preferences": {
+      "categories_any_of": ["Thai", "Indian", "Szechuan"],
+      "min_rating": 4.0
+    },
+    "aversions": {
+      "tags_any_of": ["touristy", "upscale", "formal"],
+      "price_not_in": ["$$$$"]
+    }
+  }
+]
+

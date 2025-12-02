@@ -1,0 +1,23 @@
+# Ignore environment files
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# Mac/Windows junk
+.DS_Store
+Thumbs.db
+
+# Results / generated files
+results/raw_responses/*
+results/annotated_results.csv
+
+# Virtual environments
+venv/
+.env/
+*.venv/

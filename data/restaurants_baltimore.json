@@ -1,0 +1,134 @@
+[
+  {
+    "name": "Golden Lotus",
+    "rating": 4.6,
+    "price": "$$",
+    "categories": ["Vietnamese", "Vegetarian"],
+    "tags": ["romantic", "quiet"],
+    "is_chain": false,
+    "dog_friendly": false,
+    "outdoor_seating": false,
+    "wheelchair_accessible": true
+  },
+  {
+    "name": "Harbor Flame Grill",
+    "rating": 4.2,
+    "price": "$$",
+    "categories": ["American", "Barbecue"],
+    "tags": ["family", "kid-friendly"],
+    "is_chain": false,
+    "dog_friendly": true,
+    "outdoor_seating": true,
+    "wheelchair_accessible": true
+  },
+  {
+    "name": "Charm City Thai",
+    "rating": 4.8,
+    "price": "$$",
+    "categories": ["Thai", "Spicy"],
+    "tags": ["authentic"],
+    "is_chain": false,
+    "dog_friendly": false,
+    "outdoor_seating": false,
+    "wheelchair_accessible": true
+  },
+  {
+    "name": "Bayfront Bistro",
+    "rating": 4.4,
+    "price": "$$$",
+    "categories": ["Seafood", "American"],
+    "tags": ["upscale", "romantic"],
+    "is_chain": false,
+    "dog_friendly": false,
+    "outdoor_seating": true,
+    "wheelchair_accessible": true
+  },
+  {
+    "name": "The Spicy Spoon",
+    "rating": 4.1,
+    "price": "$$",
+    "categories": ["Indian", "Szechuan", "Spicy"],
+    "tags": ["authentic"],
+    "is_chain": false,
+    "dog_friendly": false,
+    "outdoor_seating": false,
+    "wheelchair_accessible": false
+  },
+  {
+    "name": "Dockside Pub & Grill",
+    "rating": 4.0,
+    "price": "$$",
+    "categories": ["Pub", "American"],
+    "tags": ["sports", "bar"],
+    "is_chain": false,
+    "dog_friendly": true,
+    "outdoor_seating": true,
+    "wheelchair_accessible": true
+  },
+  {
+    "name": "Little India Palace",
+    "rating": 4.5,
+    "price": "$$",
+    "categories": ["Indian", "Vegetarian"],
+    "tags": ["authentic"],
+    "is_chain": false,
+    "dog_friendly": false,
+    "outdoor_seating": false,
+    "wheelchair_accessible": true
+  },
+  {
+    "name": "Fells Point Cantina",
+    "rating": 4.3,
+    "price": "$$",
+    "categories": ["Mexican"],
+    "tags": ["touristy"],
+    "is_chain": false,
+    "dog_friendly": true,
+    "outdoor_seating": true,
+    "wheelchair_accessible": false
+  },
+  {
+    "name": "Urban Greens Café",
+    "rating": 4.7,
+    "price": "$",
+    "categories": ["Healthy", "Vegetarian", "Vegan"],
+    "tags": ["casual"],
+    "is_chain": false,
+    "dog_friendly": false,
+    "outdoor_seating": true,
+    "wheelchair_accessible": true
+  },
+  {
+    "name": "Mandarin Harbor",
+    "rating": 4.6,
+    "price": "$$$$",
+    "categories": ["Chinese", "Seafood"],
+    "tags": ["formal", "upscale"],
+    "is_chain": false,
+    "dog_friendly": false,
+    "outdoor_seating": false,
+    "wheelchair_accessible": true
+  },
+  {
+    "name": "Portside Tacos",
+    "rating": 4.0,
+    "price": "$",
+    "categories": ["Mexican", "Casual"],
+    "tags": ["casual"],
+    "is_chain": true,
+    "dog_friendly": true,
+    "outdoor_seating": true,
+    "wheelchair_accessible": false
+  },
+  {
+    "name": "Riverside Bistro",
+    "rating": 4.5,
+    "price": "$$$",
+    "categories": ["American", "Brunch"],
+    "tags": ["date-night", "romantic"],
+    "is_chain": false,
+    "dog_friendly": false,
+    "outdoor_seating": true,
+    "wheelchair_accessible": true
+  }
+]
