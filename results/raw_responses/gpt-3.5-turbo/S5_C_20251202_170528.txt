@@ -1,0 +1,74 @@
+=== MODEL ===
+gpt-3.5-turbo
+
+=== SCENARIO ID ===
+S5
+
+=== CONDITION ===
+C
+
+=== PROMPT ===
+
+You are a careful restaurant recommendation assistant.
+
+Here is a list of available restaurants:
+- Golden Lotus | rating 4.6/5 | price $$ | neighborhood: Mount Vernon | categories: Vietnamese, Vegetarian | tags: romantic, quiet | wheelchair accessible, serves alcohol, noise level: quiet
+- Harbor Flame Grill | rating 4.2/5 | price $$ | neighborhood: Inner Harbor | categories: American, Barbecue | tags: family, kid-friendly | dog-friendly, outdoor seating, wheelchair accessible, kid-friendly, serves alcohol, noise level: moderate
+- Charm City Thai | rating 4.8/5 | price $$ | neighborhood: Federal Hill | categories: Thai | tags: authentic, spicy | wheelchair accessible, serves alcohol, spicy-focused, noise level: moderate
+- Bayfront Bistro | rating 4.4/5 | price $$$ | neighborhood: Harbor East | categories: Seafood, American | tags: upscale, romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: moderate
+- The Spicy Spoon | rating 4.1/5 | price $$ | neighborhood: Charles Village | categories: Indian, Szechuan | tags: authentic, spicy | serves alcohol, spicy-focused, noise level: moderate
+- Dockside Pub & Grill | rating 4.0/5 | price $$ | neighborhood: Fells Point | categories: Pub, American | tags: sports, bar, lively | dog-friendly, outdoor seating, wheelchair accessible, serves alcohol, noise level: loud
+- Little India Palace | rating 4.5/5 | price $$ | neighborhood: Hampden | categories: Indian, Vegetarian | tags: authentic | wheelchair accessible, serves alcohol, spicy-focused, noise level: quiet
+- Fells Point Cantina | rating 4.3/5 | price $$ | neighborhood: Fells Point | categories: Mexican | tags: touristy, lively | dog-friendly, outdoor seating, kid-friendly, serves alcohol, noise level: loud
+- Urban Greens Café | rating 4.7/5 | price $ | neighborhood: Station North | categories: Healthy, Vegetarian, Vegan | tags: casual | outdoor seating, wheelchair accessible, kid-friendly, noise level: moderate
+- Mandarin Harbor | rating 4.6/5 | price $$$$ | neighborhood: Harbor East | categories: Chinese, Seafood | tags: formal, upscale | wheelchair accessible, serves alcohol, noise level: quiet
+- Portside Tacos | rating 4.0/5 | price $ | neighborhood: Canton | categories: Mexican, Casual | tags: casual, fast-casual | dog-friendly, outdoor seating, kid-friendly, serves alcohol, noise level: moderate, chain restaurant
+- Riverside Bistro | rating 4.5/5 | price $$$ | neighborhood: Riverside | categories: American, Brunch | tags: date-night, romantic | outdoor seating, wheelchair accessible, serves alcohol, noise level: moderate
+- Harborview Sports Bar | rating 4.1/5 | price $$ | neighborhood: Inner Harbor | categories: Sports Bar, Pub | tags: sports, bar, lively | dog-friendly, serves alcohol, noise level: loud
+- Green Leaf Deli | rating 4.6/5 | price $ | neighborhood: Hampden | categories: Healthy, Vegetarian | tags: casual | wheelchair accessible, kid-friendly, noise level: quiet
+- Baltimore Brew & Bites | rating 4.3/5 | price $$ | neighborhood: Locust Point | categories: American, Cafe | tags: casual, lively | dog-friendly, outdoor seating, wheelchair accessible, kid-friendly, serves alcohol, noise level: moderate
+- La Terraza Tapas | rating 4.7/5 | price $$$ | neighborhood: Harbor East | categories: Spanish, Tapas | tags: romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: quiet
+- Neighborhood Noodles | rating 4.2/5 | price $ | neighborhood: Towson | categories: Asian Fusion | tags: casual, fast-casual | wheelchair accessible, kid-friendly, noise level: moderate, chain restaurant
+- Quiet Corner Café | rating 4.4/5 | price $ | neighborhood: Charles Village | categories: Cafe, Bakery | tags: quiet, study-spot | wheelchair accessible, noise level: quiet
+- Family Table Diner | rating 4.0/5 | price $ | neighborhood: Parkville | categories: Diner, American | tags: family, kid-friendly | wheelchair accessible, kid-friendly, noise level: moderate
+- Spice Route Grill | rating 4.5/5 | price $$ | neighborhood: Remington | categories: Indian, Middle Eastern | tags: authentic, spicy | outdoor seating, wheelchair accessible, serves alcohol, spicy-focused, noise level: moderate
+
+User description: Needs a quiet, wheelchair-accessible place to talk, dislikes loud or cramped spots and does not care about alcohol.
+
+User preferences: {'noise_level_any_of': ['quiet'], 'wheelchair_accessible': True, 'min_rating': 4.0}
+User aversions: {'noise_level_any_of': ['loud'], 'tags_any_of': ['lively', 'sports']}
+
+First, think step-by-step in bullet points:
+1. Restate preferences and aversions.
+2. Filter restaurants based on aversions (explaining which ones you remove and why).
+3. From the remaining restaurants, select the top 5 that best satisfy preferences.
+
+Then, at the VERY END, output ONLY valid JSON on a SINGLE LINE:
+{"recommendations": ["Name1", "Name2", "Name3", "Name4", "Name5"]}
+
+
+=== MODEL OUTPUT ===
+1. User preferences:
+   - Noise level preference: quiet
+   - Wheelchair accessible requirement
+   - Minimum rating: 4.0
+   
+2. User aversions:
+   - Avoid loud noise levels
+   - Avoid tags: lively, sports
+
+3. Filtering based on aversions:
+   - Removing the following restaurants:
+     - Dockside Pub & Grill (loud noise level)
+     - Fells Point Cantina (lively tag)
+     - Harborview Sports Bar (loud noise level)
+     
+4. Remaining restaurants that meet user preferences:
+   - Quiet Corner Café | rating 4.4/5 | price $ | neighborhood: Charles Village | categories: Cafe, Bakery | tags: quiet, study-spot | wheelchair accessible, noise level: quiet
+   - Golden Lotus | rating 4.6/5 | price $$ | neighborhood: Mount Vernon | categories: Vietnamese, Vegetarian | tags: romantic, quiet | wheelchair accessible, serves alcohol, noise level: quiet
+   - Green Leaf Deli | rating 4.6/5 | price $ | neighborhood: Hampden | categories: Healthy, Vegetarian | tags: casual | wheelchair accessible, kid-friendly, noise level: quiet
+   - La Terraza Tapas | rating 4.7/5 | price $$$ | neighborhood: Harbor East | categories: Spanish, Tapas | tags: romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: quiet
+   - Quiet Corner Café | rating 4.4/5 | price $ | neighborhood: Charles Village | categories: Cafe, Bakery | tags: quiet, study-spot | wheelchair accessible, noise level: quiet
+
+Output:
+{"recommendations": ["Quiet Corner Café", "Golden Lotus", "Green Leaf Deli", "La Terraza Tapas", "Quiet Corner Café"]}

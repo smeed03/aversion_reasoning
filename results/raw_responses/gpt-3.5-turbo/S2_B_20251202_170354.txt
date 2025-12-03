@@ -1,0 +1,54 @@
+=== MODEL ===
+gpt-3.5-turbo
+
+=== SCENARIO ID ===
+S2
+
+=== CONDITION ===
+B
+
+=== PROMPT ===
+
+You are a restaurant recommendation assistant.
+
+Here is a list of available restaurants:
+- Golden Lotus | rating 4.6/5 | price $$ | neighborhood: Mount Vernon | categories: Vietnamese, Vegetarian | tags: romantic, quiet | wheelchair accessible, serves alcohol, noise level: quiet
+- Harbor Flame Grill | rating 4.2/5 | price $$ | neighborhood: Inner Harbor | categories: American, Barbecue | tags: family, kid-friendly | dog-friendly, outdoor seating, wheelchair accessible, kid-friendly, serves alcohol, noise level: moderate
+- Charm City Thai | rating 4.8/5 | price $$ | neighborhood: Federal Hill | categories: Thai | tags: authentic, spicy | wheelchair accessible, serves alcohol, spicy-focused, noise level: moderate
+- Bayfront Bistro | rating 4.4/5 | price $$$ | neighborhood: Harbor East | categories: Seafood, American | tags: upscale, romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: moderate
+- The Spicy Spoon | rating 4.1/5 | price $$ | neighborhood: Charles Village | categories: Indian, Szechuan | tags: authentic, spicy | serves alcohol, spicy-focused, noise level: moderate
+- Dockside Pub & Grill | rating 4.0/5 | price $$ | neighborhood: Fells Point | categories: Pub, American | tags: sports, bar, lively | dog-friendly, outdoor seating, wheelchair accessible, serves alcohol, noise level: loud
+- Little India Palace | rating 4.5/5 | price $$ | neighborhood: Hampden | categories: Indian, Vegetarian | tags: authentic | wheelchair accessible, serves alcohol, spicy-focused, noise level: quiet
+- Fells Point Cantina | rating 4.3/5 | price $$ | neighborhood: Fells Point | categories: Mexican | tags: touristy, lively | dog-friendly, outdoor seating, kid-friendly, serves alcohol, noise level: loud
+- Urban Greens Café | rating 4.7/5 | price $ | neighborhood: Station North | categories: Healthy, Vegetarian, Vegan | tags: casual | outdoor seating, wheelchair accessible, kid-friendly, noise level: moderate
+- Mandarin Harbor | rating 4.6/5 | price $$$$ | neighborhood: Harbor East | categories: Chinese, Seafood | tags: formal, upscale | wheelchair accessible, serves alcohol, noise level: quiet
+- Portside Tacos | rating 4.0/5 | price $ | neighborhood: Canton | categories: Mexican, Casual | tags: casual, fast-casual | dog-friendly, outdoor seating, kid-friendly, serves alcohol, noise level: moderate, chain restaurant
+- Riverside Bistro | rating 4.5/5 | price $$$ | neighborhood: Riverside | categories: American, Brunch | tags: date-night, romantic | outdoor seating, wheelchair accessible, serves alcohol, noise level: moderate
+- Harborview Sports Bar | rating 4.1/5 | price $$ | neighborhood: Inner Harbor | categories: Sports Bar, Pub | tags: sports, bar, lively | dog-friendly, serves alcohol, noise level: loud
+- Green Leaf Deli | rating 4.6/5 | price $ | neighborhood: Hampden | categories: Healthy, Vegetarian | tags: casual | wheelchair accessible, kid-friendly, noise level: quiet
+- Baltimore Brew & Bites | rating 4.3/5 | price $$ | neighborhood: Locust Point | categories: American, Cafe | tags: casual, lively | dog-friendly, outdoor seating, wheelchair accessible, kid-friendly, serves alcohol, noise level: moderate
+- La Terraza Tapas | rating 4.7/5 | price $$$ | neighborhood: Harbor East | categories: Spanish, Tapas | tags: romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: quiet
+- Neighborhood Noodles | rating 4.2/5 | price $ | neighborhood: Towson | categories: Asian Fusion | tags: casual, fast-casual | wheelchair accessible, kid-friendly, noise level: moderate, chain restaurant
+- Quiet Corner Café | rating 4.4/5 | price $ | neighborhood: Charles Village | categories: Cafe, Bakery | tags: quiet, study-spot | wheelchair accessible, noise level: quiet
+- Family Table Diner | rating 4.0/5 | price $ | neighborhood: Parkville | categories: Diner, American | tags: family, kid-friendly | wheelchair accessible, kid-friendly, noise level: moderate
+- Spice Route Grill | rating 4.5/5 | price $$ | neighborhood: Remington | categories: Indian, Middle Eastern | tags: authentic, spicy | outdoor seating, wheelchair accessible, serves alcohol, spicy-focused, noise level: moderate
+
+User description: Romantic date, wants outdoor seating and a higher-end feel, dislikes kid-friendly places and chains.
+
+User preferences: {'tags_any_of': ['romantic', 'date-night'], 'outdoor_seating': True, 'price_in': ['$$', '$$$', '$$$$'], 'min_rating': 4.3}
+User aversions: {'tags_any_of': ['kid-friendly', 'family'], 'is_chain': True}
+
+Recommend 5 restaurants that respect ALL aversions.
+Return a numbered list with a one-sentence justification for each.
+
+
+=== MODEL OUTPUT ===
+1. **Golden Lotus** in Mount Vernon is a top pick with its romantic ambiance, outdoor seating, and upscale feel, perfect for a romantic date night without any kid-friendly distractions.
+   
+2. **Bayfront Bistro** in Harbor East offers a luxurious setting with outdoor seating, making it an ideal choice for a romantic date while avoiding any family or kid-friendly atmosphere.
+
+3. **La Terraza Tapas** in Harbor East provides a romantic and upscale experience with outdoor seating, ensuring a sophisticated date night without any kid-friendly or family-oriented elements.
+
+4. **Mandarin Harbor** in Harbor East caters to a higher-end dining experience with its formal setting, outdoor seating, and romantic ambiance, all while steering clear of any kid-friendly environments.
+
+5. **Riverside Bistro** in Riverside stands out for its romantic atmosphere, outdoor seating, and upscale vibe, making it a perfect choice for a date night that excludes any kid-friendly aspects.

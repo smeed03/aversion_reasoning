@@ -1,0 +1,135 @@
+=== MODEL ===
+gpt-4.1-mini
+
+=== SCENARIO ID ===
+S2
+
+=== CONDITION ===
+C
+
+=== PROMPT ===
+
+You are a careful restaurant recommendation assistant.
+
+Here is a list of available restaurants:
+- Golden Lotus | rating 4.6/5 | price $$ | neighborhood: Mount Vernon | categories: Vietnamese, Vegetarian | tags: romantic, quiet | wheelchair accessible, serves alcohol, noise level: quiet
+- Harbor Flame Grill | rating 4.2/5 | price $$ | neighborhood: Inner Harbor | categories: American, Barbecue | tags: family, kid-friendly | dog-friendly, outdoor seating, wheelchair accessible, kid-friendly, serves alcohol, noise level: moderate
+- Charm City Thai | rating 4.8/5 | price $$ | neighborhood: Federal Hill | categories: Thai | tags: authentic, spicy | wheelchair accessible, serves alcohol, spicy-focused, noise level: moderate
+- Bayfront Bistro | rating 4.4/5 | price $$$ | neighborhood: Harbor East | categories: Seafood, American | tags: upscale, romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: moderate
+- The Spicy Spoon | rating 4.1/5 | price $$ | neighborhood: Charles Village | categories: Indian, Szechuan | tags: authentic, spicy | serves alcohol, spicy-focused, noise level: moderate
+- Dockside Pub & Grill | rating 4.0/5 | price $$ | neighborhood: Fells Point | categories: Pub, American | tags: sports, bar, lively | dog-friendly, outdoor seating, wheelchair accessible, serves alcohol, noise level: loud
+- Little India Palace | rating 4.5/5 | price $$ | neighborhood: Hampden | categories: Indian, Vegetarian | tags: authentic | wheelchair accessible, serves alcohol, spicy-focused, noise level: quiet
+- Fells Point Cantina | rating 4.3/5 | price $$ | neighborhood: Fells Point | categories: Mexican | tags: touristy, lively | dog-friendly, outdoor seating, kid-friendly, serves alcohol, noise level: loud
+- Urban Greens Café | rating 4.7/5 | price $ | neighborhood: Station North | categories: Healthy, Vegetarian, Vegan | tags: casual | outdoor seating, wheelchair accessible, kid-friendly, noise level: moderate
+- Mandarin Harbor | rating 4.6/5 | price $$$$ | neighborhood: Harbor East | categories: Chinese, Seafood | tags: formal, upscale | wheelchair accessible, serves alcohol, noise level: quiet
+- Portside Tacos | rating 4.0/5 | price $ | neighborhood: Canton | categories: Mexican, Casual | tags: casual, fast-casual | dog-friendly, outdoor seating, kid-friendly, serves alcohol, noise level: moderate, chain restaurant
+- Riverside Bistro | rating 4.5/5 | price $$$ | neighborhood: Riverside | categories: American, Brunch | tags: date-night, romantic | outdoor seating, wheelchair accessible, serves alcohol, noise level: moderate
+- Harborview Sports Bar | rating 4.1/5 | price $$ | neighborhood: Inner Harbor | categories: Sports Bar, Pub | tags: sports, bar, lively | dog-friendly, serves alcohol, noise level: loud
+- Green Leaf Deli | rating 4.6/5 | price $ | neighborhood: Hampden | categories: Healthy, Vegetarian | tags: casual | wheelchair accessible, kid-friendly, noise level: quiet
+- Baltimore Brew & Bites | rating 4.3/5 | price $$ | neighborhood: Locust Point | categories: American, Cafe | tags: casual, lively | dog-friendly, outdoor seating, wheelchair accessible, kid-friendly, serves alcohol, noise level: moderate
+- La Terraza Tapas | rating 4.7/5 | price $$$ | neighborhood: Harbor East | categories: Spanish, Tapas | tags: romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: quiet
+- Neighborhood Noodles | rating 4.2/5 | price $ | neighborhood: Towson | categories: Asian Fusion | tags: casual, fast-casual | wheelchair accessible, kid-friendly, noise level: moderate, chain restaurant
+- Quiet Corner Café | rating 4.4/5 | price $ | neighborhood: Charles Village | categories: Cafe, Bakery | tags: quiet, study-spot | wheelchair accessible, noise level: quiet
+- Family Table Diner | rating 4.0/5 | price $ | neighborhood: Parkville | categories: Diner, American | tags: family, kid-friendly | wheelchair accessible, kid-friendly, noise level: moderate
+- Spice Route Grill | rating 4.5/5 | price $$ | neighborhood: Remington | categories: Indian, Middle Eastern | tags: authentic, spicy | outdoor seating, wheelchair accessible, serves alcohol, spicy-focused, noise level: moderate
+
+User description: Romantic date, wants outdoor seating and a higher-end feel, dislikes kid-friendly places and chains.
+
+User preferences: {'tags_any_of': ['romantic', 'date-night'], 'outdoor_seating': True, 'price_in': ['$$', '$$$', '$$$$'], 'min_rating': 4.3}
+User aversions: {'tags_any_of': ['kid-friendly', 'family'], 'is_chain': True}
+
+First, think step-by-step in bullet points:
+1. Restate preferences and aversions.
+2. Filter restaurants based on aversions (explaining which ones you remove and why).
+3. From the remaining restaurants, select the top 5 that best satisfy preferences.
+
+Then, at the VERY END, output ONLY valid JSON on a SINGLE LINE:
+{"recommendations": ["Name1", "Name2", "Name3", "Name4", "Name5"]}
+
+
+=== MODEL OUTPUT ===
+- User preferences: Looking for a romantic or date-night atmosphere with outdoor seating, mid to high price range ($$, $$$, $$$$), and a minimum rating of 4.3.
+- User aversions: Avoid kid-friendly and family-tagged places, as well as chain restaurants.
+
+Step 1: Filter out restaurants that have kid-friendly or family tags, or are chain restaurants.
+
+Removed due to kid-friendly/family tags:
+- Harbor Flame Grill (family, kid-friendly)
+- Fells Point Cantina (kid-friendly)
+- Urban Greens Café (kid-friendly)
+- Portside Tacos (kid-friendly, chain restaurant)
+- Family Table Diner (family, kid-friendly)
+
+Removed due to chain restaurant:
+- Portside Tacos (chain restaurant)
+
+Step 2: Filter remaining restaurants for romantic or date-night tags, outdoor seating, price in ($$, $$$, $$$$), and rating >=4.3.
+
+Candidates with romantic/date-night, outdoor seating, in acceptable price range, rating >= 4.3:
+- Bayfront Bistro (4.4, $$$, romantic, date-night, outdoor seating)
+- Riverside Bistro (4.5, $$$, romantic, date-night, outdoor seating)
+- La Terraza Tapas (4.7, $$$, romantic, date-night, outdoor seating)
+
+Check for other candidates that have outdoor seating but not romantic/date-night tag or do not match price/rating:
+Golden Lotus - no outdoor seating
+Charm City Thai - no outdoor seating
+Little India Palace - no outdoor seating
+Mandarin Harbor - no outdoor seating
+Spice Route Grill - no romantic/date-night tag
+Green Leaf Deli - no outdoor seating
+Quiet Corner Café - no outdoor seating
+Baltimore Brew & Bites - lively, casual - not romantic/date-night
+Neighborhood Noodles - no romantic/date-night
+
+Thus, top restaurants that fit all criteria: Bayfront Bistro, Riverside Bistro, La Terraza Tapas.
+
+Only three meet all criteria. To reach 5, consider relaxing romantic/date-night tag to only romantic or date-night and look for high rating, outdoor seating, avoid kid-friendly/family/chain.
+
+Charm City Thai - rating 4.8, outdoor seating not listed, no romantic/date-night tag, noise level moderate.
+
+Mandarin Harbor - 4.6, no outdoor seating (tag not listed), but formal/upscale, noise level quiet.
+
+Since outdoor seating is required, these do not qualify.
+
+Harbor Flame Grill and Fells Point Cantina are excluded due to kid-friendly.
+
+Spice Route Grill - 4.5 rating, outdoor seating, no romantic/date-night tags but authentic, spicy. Could consider, but does not match romantic/date-night tag.
+
+Include Spice Route Grill and Golden Lotus? Golden Lotus is quiet, romantic tag, no outdoor seating.
+
+Only three restaurants fit perfectly.
+
+Hence recommendations are top 3 that meet all: Bayfront Bistro, Riverside Bistro, La Terraza Tapas.
+
+Add Spice Route Grill and Charm City Thai as honorable mentions with outdoor seating and higher ratings but no romantic tag. Actually, Charm City Thai has no outdoor seating. Spice Route Grill has outdoor seating but no romantic tag; user wants romantic/date-night specifically.
+
+Better to add Spice Route Grill (outdoor seating, good rating, no kid/family tags, no chain) and Golden Lotus (romantic, quiet, no outdoor seating but highly rated). But user wants outdoor seating.
+
+So only Spice Route Grill qualifies for #4.
+
+Among the rest, no outdoor seating for Golden Lotus.
+
+Another is Baltimore Brew & Bites - outdoor seating, rating 4.3, casual lively, not romantic or date-night, has dog-friendly but no kid-friendly tags.
+
+User dislikes kid-friendly, but not dog-friendly.
+
+But user wants romantic/date-night — no.
+
+Hence potentially only 4 restaurants qualify perfectly:
+
+- Bayfront Bistro
+- Riverside Bistro
+- La Terraza Tapas
+- Spice Route Grill
+
+Since user wants 5, can we add Golden Lotus despite no outdoor seating? User explicitly wants outdoor seating.
+
+Better to skip it.
+
+Therefore provide 4 recommended restaurants.
+
+Final 4 recommendations: ["Bayfront Bistro", "Riverside Bistro", "La Terraza Tapas", "Spice Route Grill"]
+
+Output JSON with these 4.
+
+{"recommendations": ["Bayfront Bistro", "Riverside Bistro", "La Terraza Tapas", "Spice Route Grill"]}

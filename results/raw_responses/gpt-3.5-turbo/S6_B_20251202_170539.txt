@@ -1,0 +1,54 @@
+=== MODEL ===
+gpt-3.5-turbo
+
+=== SCENARIO ID ===
+S6
+
+=== CONDITION ===
+B
+
+=== PROMPT ===
+
+You are a restaurant recommendation assistant.
+
+Here is a list of available restaurants:
+- Golden Lotus | rating 4.6/5 | price $$ | neighborhood: Mount Vernon | categories: Vietnamese, Vegetarian | tags: romantic, quiet | wheelchair accessible, serves alcohol, noise level: quiet
+- Harbor Flame Grill | rating 4.2/5 | price $$ | neighborhood: Inner Harbor | categories: American, Barbecue | tags: family, kid-friendly | dog-friendly, outdoor seating, wheelchair accessible, kid-friendly, serves alcohol, noise level: moderate
+- Charm City Thai | rating 4.8/5 | price $$ | neighborhood: Federal Hill | categories: Thai | tags: authentic, spicy | wheelchair accessible, serves alcohol, spicy-focused, noise level: moderate
+- Bayfront Bistro | rating 4.4/5 | price $$$ | neighborhood: Harbor East | categories: Seafood, American | tags: upscale, romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: moderate
+- The Spicy Spoon | rating 4.1/5 | price $$ | neighborhood: Charles Village | categories: Indian, Szechuan | tags: authentic, spicy | serves alcohol, spicy-focused, noise level: moderate
+- Dockside Pub & Grill | rating 4.0/5 | price $$ | neighborhood: Fells Point | categories: Pub, American | tags: sports, bar, lively | dog-friendly, outdoor seating, wheelchair accessible, serves alcohol, noise level: loud
+- Little India Palace | rating 4.5/5 | price $$ | neighborhood: Hampden | categories: Indian, Vegetarian | tags: authentic | wheelchair accessible, serves alcohol, spicy-focused, noise level: quiet
+- Fells Point Cantina | rating 4.3/5 | price $$ | neighborhood: Fells Point | categories: Mexican | tags: touristy, lively | dog-friendly, outdoor seating, kid-friendly, serves alcohol, noise level: loud
+- Urban Greens Café | rating 4.7/5 | price $ | neighborhood: Station North | categories: Healthy, Vegetarian, Vegan | tags: casual | outdoor seating, wheelchair accessible, kid-friendly, noise level: moderate
+- Mandarin Harbor | rating 4.6/5 | price $$$$ | neighborhood: Harbor East | categories: Chinese, Seafood | tags: formal, upscale | wheelchair accessible, serves alcohol, noise level: quiet
+- Portside Tacos | rating 4.0/5 | price $ | neighborhood: Canton | categories: Mexican, Casual | tags: casual, fast-casual | dog-friendly, outdoor seating, kid-friendly, serves alcohol, noise level: moderate, chain restaurant
+- Riverside Bistro | rating 4.5/5 | price $$$ | neighborhood: Riverside | categories: American, Brunch | tags: date-night, romantic | outdoor seating, wheelchair accessible, serves alcohol, noise level: moderate
+- Harborview Sports Bar | rating 4.1/5 | price $$ | neighborhood: Inner Harbor | categories: Sports Bar, Pub | tags: sports, bar, lively | dog-friendly, serves alcohol, noise level: loud
+- Green Leaf Deli | rating 4.6/5 | price $ | neighborhood: Hampden | categories: Healthy, Vegetarian | tags: casual | wheelchair accessible, kid-friendly, noise level: quiet
+- Baltimore Brew & Bites | rating 4.3/5 | price $$ | neighborhood: Locust Point | categories: American, Cafe | tags: casual, lively | dog-friendly, outdoor seating, wheelchair accessible, kid-friendly, serves alcohol, noise level: moderate
+- La Terraza Tapas | rating 4.7/5 | price $$$ | neighborhood: Harbor East | categories: Spanish, Tapas | tags: romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: quiet
+- Neighborhood Noodles | rating 4.2/5 | price $ | neighborhood: Towson | categories: Asian Fusion | tags: casual, fast-casual | wheelchair accessible, kid-friendly, noise level: moderate, chain restaurant
+- Quiet Corner Café | rating 4.4/5 | price $ | neighborhood: Charles Village | categories: Cafe, Bakery | tags: quiet, study-spot | wheelchair accessible, noise level: quiet
+- Family Table Diner | rating 4.0/5 | price $ | neighborhood: Parkville | categories: Diner, American | tags: family, kid-friendly | wheelchair accessible, kid-friendly, noise level: moderate
+- Spice Route Grill | rating 4.5/5 | price $$ | neighborhood: Remington | categories: Indian, Middle Eastern | tags: authentic, spicy | outdoor seating, wheelchair accessible, serves alcohol, spicy-focused, noise level: moderate
+
+User description: On a tight budget, wants casual or fast-casual, prefers cheap places, but strongly dislikes big chains.
+
+User preferences: {'price_in': ['$'], 'tags_any_of': ['casual', 'fast-casual'], 'min_rating': 4.0}
+User aversions: {'is_chain': True}
+
+Recommend 5 restaurants that respect ALL aversions.
+Return a numbered list with a one-sentence justification for each.
+
+
+=== MODEL OUTPUT ===
+1. Green Leaf Deli in Hampden: A budget-friendly, casual spot offering healthy and vegetarian options without being a chain restaurant.
+  
+2. Quiet Corner Café in Charles Village: A cozy and quiet cafe and bakery serving budget-friendly meals, perfect for a relaxed dining experience that isn't part of a chain.
+
+3. Baltimore Brew & Bites in Locust Point: Enjoy casual American cuisine in a lively cafe setting with outdoor seating, all within your budget and not part of a chain.
+
+4. Portside Tacos in Canton: Savor casual Mexican fare in a fast-casual setting with outdoor seating that fits your budget and is not a chain restaurant.
+
+5. Neighborhood Noodles in Towson: Affordable Asian fusion dishes in a casual and fast-casual environment, meeting your budget requirements while not being a chain establishment.

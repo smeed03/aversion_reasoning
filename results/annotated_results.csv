@@ -1,0 +1,167 @@
+﻿scenario_id,model,prompt_condition,run_id,restaurant_name,pref_ok,aversion_ok,notes,reasoning_score,diversity_cuisines,diversity_neighborhoods
+S1,gpt-3.5-turbo,A,1,Golden Lotus,1,1,"Matches vegetarian & price preference",3,7,5
+S1,gpt-3.5-turbo,A,1,Charm City Thai,0,1,"Thai only; not in vegetarian/vegan/healthy categories",3,7,5
+S1,gpt-3.5-turbo,A,1,Little India Palace,1,1,"Vegetarian option",3,7,5
+S1,gpt-3.5-turbo,A,1,Urban Greens Café,1,1,"Ideal vegetarian/vegan match",3,7,5
+S1,gpt-3.5-turbo,A,1,Spice Route Grill,0,1,"Not explicitly vegetarian/vegan/healthy",3,7,5
+S1,gpt-3.5-turbo,B,1,Golden Lotus,1,1,"Matches preferences and avoids aversions",3,5,5
+S1,gpt-3.5-turbo,B,1,Charm City Thai,0,1,"Thai only; violates vegetarian/vegan/healthy preference",3,5,5
+S1,gpt-3.5-turbo,B,1,Little India Palace,1,1,"Vegetarian; good match",3,5,5
+S1,gpt-3.5-turbo,B,1,Urban Greens Café,1,1,"Perfect preference and aversion match",3,5,5
+S1,gpt-3.5-turbo,B,1,Quiet Corner Café,0,1,"Not in vegetarian/vegan/healthy categories",3,5,5
+S1,gpt-3.5-turbo,C,1,Golden Lotus,1,1,"Strong match for veg/price; avoids all aversions",4,5,4
+S1,gpt-3.5-turbo,C,1,Charm City Thai,0,1,"Thai cuisine; not in vegetarian/vegan/healthy categories",4,5,4
+S1,gpt-3.5-turbo,C,1,Little India Palace,1,1,"Vegetarian match; respects aversions",4,5,4
+S1,gpt-3.5-turbo,C,1,Quiet Corner Café,0,1,"Not in vegetarian/vegan/healthy categories",4,5,4
+S1,gpt-3.5-turbo,C,1,Green Leaf Deli,1,1,"Healthy/vegetarian; fits preferences",4,5,4
+S2,gpt-3.5-turbo,A,1,Bayfront Bistro,1,1,"Strong match for romantic/date-night + outdoor seating",3,5,3
+S2,gpt-3.5-turbo,A,1,La Terraza Tapas,1,1,"Romantic/date-night with outdoor seating; ideal fit",3,5,3
+S2,gpt-3.5-turbo,A,1,Mandarin Harbor,0,1,"No outdoor seating; not tagged romantic/date-night",3,5,3
+S2,gpt-3.5-turbo,A,1,Golden Lotus,0,1,"Romantic but lacks required outdoor seating",3,5,3
+S2,gpt-3.5-turbo,A,1,Spice Route Grill,0,1,"Outdoor seating but not romantic/date-night",3,5,3
+S2,gpt-3.5-turbo,B,1,Golden Lotus,0,1,"Hallucinated outdoor seating; fails outdoor seating requirement",3,5,3
+S2,gpt-3.5-turbo,B,1,Bayfront Bistro,1,1,"Matches romantic/date-night + outdoor seating preferences",3,5,3
+S2,gpt-3.5-turbo,B,1,La Terraza Tapas,1,1,"Strong romantic/date-night match with outdoor seating",3,5,3
+S2,gpt-3.5-turbo,B,1,Mandarin Harbor,0,1,"Incorrectly labeled romantic; no outdoor seating",3,5,3
+S2,gpt-3.5-turbo,B,1,Riverside Bistro,1,1,"Good romantic/date-night fit with outdoor seating",3,5,3
+S2,gpt-3.5-turbo,C,1,Charm City Thai,0,1,"No romantic/date-night tag or outdoor seating; fails main prefs",3,5,4
+S2,gpt-3.5-turbo,C,1,La Terraza Tapas,1,1,"Strong romantic/date-night match with outdoor seating",3,5,4
+S2,gpt-3.5-turbo,C,1,Riverside Bistro,1,1,"Good romantic/date-night fit with outdoor seating",3,5,4
+S2,gpt-3.5-turbo,C,1,Golden Lotus,0,1,"Romantic but lacks required outdoor seating",3,5,4
+S2,gpt-3.5-turbo,C,1,Bayfront Bistro,1,1,"Romantic/date-night with outdoor seating; solid match",3,5,4
+S3,gpt-3.5-turbo,A,1,Charm City Thai,1,1,"Strong Thai + spicy match",3,5,5
+S3,gpt-3.5-turbo,A,1,Little India Palace,1,1,"Indian & spicy-focused; great fit",3,5,5
+S3,gpt-3.5-turbo,A,1,The Spicy Spoon,1,1,"Indian/Szechuan + spicy focus; ideal match",3,5,5
+S3,gpt-3.5-turbo,A,1,Spice Route Grill,1,1,"Indian & spicy-focused; solid match",3,5,5
+S3,gpt-3.5-turbo,A,1,Urban Greens Café,0,1,"Not spicy; does not match Thai/Indian/Szechuan categories",3,5,5
+S3,gpt-3.5-turbo,B,1,The Spicy Spoon,1,1,"Strong Indian/Szechuan spicy match; fits all aversions",4,5,5
+S3,gpt-3.5-turbo,B,1,Spice Route Grill,1,1,"Indian & spicy-focused; avoids touristy/formal/upscale tags",4,5,5
+S3,gpt-3.5-turbo,B,1,Little India Palace,1,1,"Indian & spicy; good fit with no aversion violations",4,5,5
+S3,gpt-3.5-turbo,B,1,Charm City Thai,1,1,"Authentic Thai spicy cuisine; fits preferences & aversions",4,5,5
+S3,gpt-3.5-turbo,B,1,Neighborhood Noodles,0,1,"Not Thai/Indian/Szechuan and not spicy-focused",4,5,5
+S3,gpt-3.5-turbo,C,1,Charm City Thai,1,1,"Authentic Thai spicy match; fits all aversions",3,5,4
+S3,gpt-3.5-turbo,C,1,Little India Palace,1,1,"Indian spicy-focused; avoids touristy/formal/upscale",3,5,4
+S3,gpt-3.5-turbo,C,1,Spice Route Grill,1,1,"Indian/Middle Eastern spicy match; fits aversions",3,5,4
+S3,gpt-3.5-turbo,C,1,The Spicy Spoon,1,1,"Indian/Szechuan spicy pick with no aversion violations",3,5,4
+S3,gpt-3.5-turbo,C,1,Green Leaf Deli,0,1,"Not spicy-focused; does not match Thai/Indian/Szechuan prefs",3,5,4
+S4,gpt-3.5-turbo,A,1,Harbor Flame Grill,0,1,"Not sports bar or pub; incorrect match for preferences",3,5,3
+S4,gpt-3.5-turbo,A,1,Harborview Sports Bar,1,1,"Strong sports-bar/pub match with required tags",3,5,3
+S4,gpt-3.5-turbo,A,1,Fells Point Cantina,0,1,"Lively but not a sports bar or pub; fails category preference",3,5,3
+S4,gpt-3.5-turbo,A,1,Dockside Pub & Grill,1,1,"Matches sports-bar/pub categories and tags",3,5,3
+S4,gpt-3.5-turbo,A,1,Neighborhood Noodles,0,1,"Not sports bar/pub and lacks sports/bar/lively tags",3,5,3
+S4,gpt-3.5-turbo,B,1,Fells Point Cantina,0,0,"Loud and not a sports bar/pub; violates prefs and aversions",2,5,3
+S4,gpt-3.5-turbo,B,1,Harbor Flame Grill,0,1,"No sports-bar vibe; passes noise aversion",2,5,3
+S4,gpt-3.5-turbo,B,1,Harborview Sports Bar,1,0,"Sports bar match but loud; violates noise aversion",2,5,3
+S4,gpt-3.5-turbo,B,1,Dockside Pub & Grill,1,0,"Pub and sports tags but loud; violates noise aversion",2,5,3
+S4,gpt-3.5-turbo,B,1,Green Leaf Deli,0,1,"Quiet but not a sports bar/pub; fails preferences",2,5,3
+S4,gpt-3.5-turbo,C,1,Green Leaf Deli,0,1,"Quiet but not sports bar/pub; ignores core preferences and only 2 recs returned",2,2,2
+S4,gpt-3.5-turbo,C,1,Quiet Corner Café,0,1,"Quiet cafe/bakery with no sports-bar vibe; model returned fewer than 5 recs",2,2,2
+S5,gpt-3.5-turbo,A,1,Golden Lotus,1,1,"Quiet, wheelchair accessible, high rating",4,5,4
+S5,gpt-3.5-turbo,A,1,Quiet Corner Café,1,1,"Quiet atmosphere with wheelchair accessibility",4,5,4
+S5,gpt-3.5-turbo,A,1,La Terraza Tapas,1,1,"Quiet and wheelchair accessible with excellent rating",4,5,4
+S5,gpt-3.5-turbo,A,1,Little India Palace,1,1,"Meets quiet + accessibility requirements with strong rating",4,5,4
+S5,gpt-3.5-turbo,A,1,Mandarin Harbor,1,1,"Quiet, accessible, and high rating",4,5,4
+S5,gpt-3.5-turbo,B,1,Golden Lotus,1,1,"Quiet, accessible, avoids lively/sports/loud tags; perfect match",4,5,4
+S5,gpt-3.5-turbo,B,1,Quiet Corner Café,1,1,"Quiet and wheelchair-accessible; avoids all aversions",4,5,4
+S5,gpt-3.5-turbo,B,1,Little India Palace,1,1,"Quiet and accessible; safe tags; good rating",4,5,4
+S5,gpt-3.5-turbo,B,1,Green Leaf Deli,1,1,"Quiet, accessible, no aversion tags; ideal fit",4,5,4
+S5,gpt-3.5-turbo,B,1,Mandarin Harbor,1,1,"Quiet, accessible, high-rated; avoids lively/sports tags",4,5,4
+S5,gpt-3.5-turbo,C,1,Quiet Corner Café,1,1,"Quiet, wheelchair accessible, no aversion tags; strong match",3,4,4
+S5,gpt-3.5-turbo,C,1,Golden Lotus,1,1,"Quiet, accessible, high rating; fits all constraints",3,4,4
+S5,gpt-3.5-turbo,C,1,Green Leaf Deli,1,1,"Quiet and wheelchair accessible with no lively/sports tags",3,4,4
+S5,gpt-3.5-turbo,C,1,La Terraza Tapas,1,1,"Quiet, accessible, high-rated Spanish/Tapas option",3,4,4
+S5,gpt-3.5-turbo,C,1,Quiet Corner Café,1,1,"Duplicate recommendation in same run; still matches all prefs and aversions",3,4,4
+S6,gpt-3.5-turbo,A,1,Green Leaf Deli,1,1,"Meets cheap + casual + rating requirements",3,5,5
+S6,gpt-3.5-turbo,A,1,Baltimore Brew & Bites,0,1,"Fails price preference ('$'); otherwise casual w/ good rating",3,5,5
+S6,gpt-3.5-turbo,A,1,Quiet Corner Café,0,1,"Not tagged casual/fast-casual; price and rating OK",3,5,5
+S6,gpt-3.5-turbo,A,1,Neighborhood Noodles,1,1,"Cheap, fast-casual, rating ≥4.0",3,5,5
+S6,gpt-3.5-turbo,A,1,Portside Tacos,1,1,"Cheap, casual/fast-casual, meets all explicit preferences",3,5,5
+S6,gpt-3.5-turbo,B,1,Green Leaf Deli,1,1,"Meets cheap + casual + rating; not a chain",2,5,5
+S6,gpt-3.5-turbo,B,1,Quiet Corner Café,0,1,"Not tagged casual/fast-casual; cheap and not a chain",2,5,5
+S6,gpt-3.5-turbo,B,1,Baltimore Brew & Bites,0,1,"Not cheap ('$' only) but casual and not a chain",2,5,5
+S6,gpt-3.5-turbo,B,1,Portside Tacos,1,0,"Matches preferences but is a chain restaurant",2,5,5
+S6,gpt-3.5-turbo,B,1,Neighborhood Noodles,1,0,"Matches preferences but is a chain restaurant",2,5,5
+S6,gpt-3.5-turbo,C,1,Quiet Corner Café,0,1,"Cheap and non-chain but not tagged casual/fast-casual",2,5,5
+S6,gpt-3.5-turbo,C,1,Green Leaf Deli,1,1,"Fully matches cheap + casual + rating and avoids chains",2,5,5
+S6,gpt-3.5-turbo,C,1,Neighborhood Noodles,1,0,"Meets explicit preferences but is a chain restaurant (aversion violation)",2,5,5
+S6,gpt-3.5-turbo,C,1,Baltimore Brew & Bites,0,1,"Casual and non-chain but not cheap ('$'); violates price preference",2,5,5
+S6,gpt-3.5-turbo,C,1,Spice Route Grill,0,1,"Non-chain with good rating but fails both price and casual/fast-casual preferences",2,5,5
+S1,gpt-4.1-mini,A,1,Golden Lotus,1,1,"Matches vegetarian + mid-price perfectly",4,5,4
+S1,gpt-4.1-mini,A,1,Little India Palace,1,1,"Vegetarian, mid-price, meets rating requirement",4,5,4
+S1,gpt-4.1-mini,A,1,Urban Greens Café,1,1,"Healthy/vegan focus and low price meet preferences",4,5,4
+S1,gpt-4.1-mini,A,1,Green Leaf Deli,1,1,"Healthy, cheap, and vegetarian-friendly",4,5,4
+S1,gpt-4.1-mini,A,1,Quiet Corner Café,0,1,"Quiet but not Veg/Vegan/Healthy; fails category preference",4,5,4
+S1,gpt-4.1-mini,B,1,Golden Lotus,1,1,"Matches preferences and avoids all aversions",4,5,4
+S1,gpt-4.1-mini,B,1,Little India Palace,1,1,"Vegetarian and not dog-friendly; fits B constraints",4,5,4
+S1,gpt-4.1-mini,B,1,Urban Greens Café,1,1,"Healthy/vegetarian and avoids dog-friendly/bar traits",4,5,4
+S1,gpt-4.1-mini,B,1,Green Leaf Deli,1,1,"Healthy and cheap; satisfies constraints",4,5,4
+S1,gpt-4.1-mini,B,1,Quiet Corner Café,0,1,"Not veg/vegan/healthy but respects all aversions",4,5,4
+S1,gpt-4.1-mini,C,1,Golden Lotus,1,1,"Strong match on veg-friendly + no aversions; excellent CoT filtering",5,4,4
+S1,gpt-4.1-mini,C,1,Little India Palace,1,1,"Vegetarian, mid-price, avoids all aversions; CoT evaluated correctly",5,4,4
+S1,gpt-4.1-mini,C,1,Urban Greens Café,1,1,"Healthy/vegan and avoids all aversions; CoT handled well",5,4,4
+S1,gpt-4.1-mini,C,1,Green Leaf Deli,1,1,"Vegetarian-friendly and avoids all aversions; reasoning consistent",5,4,4
+S1,gpt-4.1-mini,C,1,Spice Route Grill,1,1,"Indian place with vegetarian-friendly dishes; fits preferences & aversions",5,4,4
+S2,gpt-4.1-mini,A,1,La Terraza Tapas,1,1,"Matches all romantic + outdoor + upscale preferences perfectly",3,5,3
+S2,gpt-4.1-mini,A,1,Bayfront Bistro,1,1,"Strong match for date-night with outdoor seating and upscale feel",3,5,3
+S2,gpt-4.1-mini,A,1,Riverside Bistro,1,1,"Romantic, outdoor seating, upscale; fits all preferences",3,5,3
+S2,gpt-4.1-mini,A,1,Golden Lotus,0,1,"Incorrectly treated as outdoor seating; mismatch with key preference",3,5,3
+S2,gpt-4.1-mini,A,1,Mandarin Harbor,0,1,"Not romantic/date-night and lacks outdoor seating; poor pref match",3,5,3
+S2,gpt-4.1-mini,B,1,Bayfront Bistro,1,1,"Matches romantic + outdoor + upscale preferences and avoids all aversions",3,5,4
+S2,gpt-4.1-mini,B,1,La Terraza Tapas,1,1,"Perfect romantic outdoor choice with no kid-friendly or chain issues",3,5,4
+S2,gpt-4.1-mini,B,1,Riverside Bistro,1,1,"Meets all preferences and avoids kid-friendly and chain tags",3,5,4
+S2,gpt-4.1-mini,B,1,Golden Lotus,0,1,"Model incorrectly claimed outdoor seating; violates core preference",3,5,4
+S2,gpt-4.1-mini,B,1,Spice Route Grill,0,1,"Not romantic/date-night tagged; fails main preference",3,5,4
+S2,gpt-4.1-mini,C,1,Bayfront Bistro,1,1,"Meets all romantic, outdoor, high-end requirements and avoids all aversions",3,4,3
+S2,gpt-4.1-mini,C,1,Riverside Bistro,1,1,"Valid romantic outdoor option with no kid-friendly or chain attributes",3,4,3
+S2,gpt-4.1-mini,C,1,La Terraza Tapas,1,1,"Fully satisfies romantic/date-night, outdoor seating, rating and aversion constraints",3,4,3
+S2,gpt-4.1-mini,C,1,Spice Route Grill,0,1,"Fails romantic/date-night preference but respects all aversions",3,4,3
+S2,gpt-4.1-mini,C,1,MISSING_RECOMMENDATION,0,0,"Model failed to provide a required fifth recommendation",3,4,3
+S3,gpt-4.1-mini,A,1,Charm City Thai,1,1,"Matches spicy authentic Thai preference and avoids touristy/formal places",2,3,4
+S3,gpt-4.1-mini,A,1,Spice Route Grill,1,1,"Meets spicy-focused Indian preference with no formal/touristy attributes",2,3,4
+S3,gpt-4.1-mini,A,1,Little India Palace,1,1,"Spicy-focused authentic Indian option fully aligned with user intent",2,3,4
+S3,gpt-4.1-mini,A,1,The Spicy Spoon,1,1,"Authentic spicy Indian/Szechuan option with no aversion violations",2,3,4
+S3,gpt-4.1-mini,A,1,MISSING_RECOMMENDATION,0,0,"Model failed to provide a required fifth restaurant",2,3,4
+S3,gpt-4.1-mini,B,1,Charm City Thai,1,1,"Authentic spicy Thai, meets all prefs and avoids all aversions",2,4,5
+S3,gpt-4.1-mini,B,1,Little India Palace,1,1,"Authentic spicy Indian option with quiet non-formal atmosphere",2,4,5
+S3,gpt-4.1-mini,B,1,The Spicy Spoon,1,1,"Spicy Indian/Szechuan option fully aligned with user intent",2,4,5
+S3,gpt-4.1-mini,B,1,Spice Route Grill,1,1,"Authentic spicy Indian/Middle Eastern food with no aversion violations",2,4,5
+S3,gpt-4.1-mini,B,1,Urban Greens Café,0,1,"Model-added filler that fits aversions but violates spicy/category preferences",2,4,5
+S3,gpt-4.1-mini,C,1,Charm City Thai,1,1,"Top-choice spicy authentic Thai; meets all prefs and avoids all aversions",3,4,4
+S3,gpt-4.1-mini,C,1,Little India Palace,1,1,"Authentic spicy Indian option in a quiet non-formal setting",3,4,4
+S3,gpt-4.1-mini,C,1,Spice Route Grill,1,1,"Authentic spicy Indian/Middle Eastern food with no aversion violations",3,4,4
+S3,gpt-4.1-mini,C,1,The Spicy Spoon,1,1,"Spicy-focused Indian/Szechuan option fully aligned with preferences",3,4,4
+S4,gpt-4.1-mini,A,1,Harbor Flame Grill,0,1,"Does not meet sports-bar preference; incorrectly recommended",1,5,4
+S4,gpt-4.1-mini,A,1,Harborview Sports Bar,1,1,"Valid sports bar meeting explicit preferences",1,5,4
+S4,gpt-4.1-mini,A,1,Dockside Pub & Grill,1,1,"Correctly satisfies sports-bar/pub preference",1,5,4
+S4,gpt-4.1-mini,A,1,Baltimore Brew & Bites,1,1,"Matches lively tag; acceptable for game watching",1,5,4
+S4,gpt-4.1-mini,A,1,Spice Route Grill,0,1,"Not a sports bar or lively venue; incorrect recommendation",1,5,4
+S4,gpt-4.1-mini,B,0,Harbor Flame Grill,0,1,"Does not satisfy sports-bar or tag preferences; incorrect recommendation",1,1,1
+S5,gpt-4.1-mini,A,1,Golden Lotus,1,1,"Correctly satisfies quiet + wheelchair-accessible preference",1,5,4
+S5,gpt-4.1-mini,A,1,Little India Palace,1,1,"Correctly satisfies quiet + wheelchair-accessible preference",1,5,4
+S5,gpt-4.1-mini,A,1,Mandarin Harbor,1,1,"Correctly satisfies quiet + wheelchair-accessible preference",1,5,4
+S5,gpt-4.1-mini,A,1,La Terraza Tapas,1,1,"Correctly satisfies quiet + wheelchair-accessible preference",1,5,4
+S5,gpt-4.1-mini,A,1,Quiet Corner Café,1,1,"Correctly satisfies quiet + wheelchair-accessible preference",1,5,4
+S5,gpt-4.1-mini,B,1,Golden Lotus,1,1,"Correctly satisfies quiet + wheelchair-accessible preference and avoids aversions",1,5,4
+S5,gpt-4.1-mini,B,1,Little India Palace,1,1,"Correctly meets all quiet and accessibility preferences with no loud/lively tags",1,5,4
+S5,gpt-4.1-mini,B,1,Quiet Corner Café,1,1,"Quiet and wheelchair-accessible; matches preferences and avoids aversions",1,5,4
+S5,gpt-4.1-mini,B,1,Green Leaf Deli,1,1,"Quiet, accessible, and free of lively/sports tags; valid recommendation",1,5,4
+S5,gpt-4.1-mini,B,1,La Terraza Tapas,1,1,"Quiet, accessible, and high-rated while avoiding all aversions",1,5,4
+S5,gpt-4.1-mini,C,1,La Terraza Tapas,1,1,"Strong match: quiet, wheelchair-accessible, high-rated, avoids lively/sports tags",1,5,4
+S5,gpt-4.1-mini,C,1,Golden Lotus,1,1,"Quiet and accessible; fully satisfies preferences and aversions",1,5,4
+S5,gpt-4.1-mini,C,1,Mandarin Harbor,1,1,"Meets quiet + accessibility requirements and respects aversions",1,5,4
+S5,gpt-4.1-mini,C,1,Green Leaf Deli,1,1,"Quiet, wheelchair-accessible, and avoids noisy or lively environments",1,5,4
+S5,gpt-4.1-mini,C,1,Little India Palace,1,1,"Quiet and accessible with no conflicting tags; valid recommendation",1,5,4
+S6,gpt-4.1-mini,A,1,Urban Greens Café,1,1,"Excellent cheap, casual, non-chain option fully matching preferences",1,5,4
+S6,gpt-4.1-mini,A,1,Green Leaf Deli,1,1,"Strong non-chain match for cheap and casual preferences",1,5,4
+S6,gpt-4.1-mini,A,1,Quiet Corner Café,0,1,"Not casual or fast-casual; incorrect for stated preferences",1,5,4
+S6,gpt-4.1-mini,A,1,Neighborhood Noodles,1,0,"Chain restaurant violates aversion to big chains",1,5,4
+S6,gpt-4.1-mini,A,1,Portside Tacos,1,0,"Chain restaurant conflicts with strong dislike of chains",1,5,4
+S6,gpt-4.1-mini,B,1,Urban Greens Café,1,1,"Fully matches cheap, casual, non-chain criteria",1,5,4
+S6,gpt-4.1-mini,B,1,Green Leaf Deli,1,1,"Correctly satisfies cheap, casual, non-chain preferences",1,5,4
+S6,gpt-4.1-mini,B,1,Quiet Corner Café,0,1,"Not casual or fast-casual; fails tag preference",1,5,4
+S6,gpt-4.1-mini,B,1,Family Table Diner,0,1,"Not casual or fast-casual; incorrect recommendation",1,5,4
+S6,gpt-4.1-mini,B,1,Harbor Flame Grill,0,1,"Incorrect: price not $, and tags do not match casual/fast-casual",1,5,4
+S6,gpt-4.1-mini,C,1,Urban Greens Café,1,1,"Correct cheap, casual, non-chain choice fully matching preferences and aversions",1,5,4
+S6,gpt-4.1-mini,C,1,Green Leaf Deli,1,1,"Correctly satisfies cheap price, casual tag, rating, and non-chain aversion",1,5,4
+S6,gpt-4.1-mini,C,1,Quiet Corner Café,0,1,"Not tagged casual or fast-casual, so fails the tag preference despite meeting price and non-chain criteria",1,5,4
+S6,gpt-4.1-mini,C,1,Family Table Diner,0,1,"Tagged family/kid-friendly rather than casual or fast-casual, so does not satisfy the tag preference",1,5,4

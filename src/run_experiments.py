@@ -4,40 +4,52 @@ from datetime import datetime
 from load_data import load_restaurants, load_scenarios
 from llm_calls import build_prompt, call_llm
 
-# Directory to store raw model outputs
-RESULTS_DIR = Path(__file__).resolve().parents[1] / "results" / "raw_responses"
-RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+# Folder to store raw model outputs/reccomendations
+BASE_RESULTS_DIR = Path(__file__).resolve().parents[1] / "results" / "raw_responses"
+BASE_RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def run_one_experiment(restaurants, scenario, condition, model="gpt-4.1-mini"):
     """
-    Runs the model on a single (scenario, condition) pair,
-    saves the prompt + output to a text file.
+    Runs model on single (scenario, condition) pair,
+    saves prompt + output to text file under model-specific folder.
     """
     scenario_id = scenario["id"]
 
     prompt = build_prompt(restaurants, scenario, condition)
     output_text = call_llm(prompt, model=model)
 
-    # Filename structure: S1_A_gpt-4.1-mini_TIMESTAMP.txt
+    # Create a folder for each model
+    model_dir = BASE_RESULTS_DIR / model
+    model_dir.mkdir(parents=True, exist_ok=True)
+
+    # Structuring output filenames
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = RESULTS_DIR / f"{scenario_id}_{condition}_{model}_{timestamp}.txt"
+    filename = model_dir / f"{scenario_id}_{condition}_{timestamp}.txt"
 
     with open(filename, "w", encoding="utf-8") as f:
-        f.write("=== PROMPT ===\n")
+        f.write("=== MODEL ===\n")
+        f.write(model)
+        f.write("\n\n=== SCENARIO ID ===\n")
+        f.write(scenario_id)
+        f.write("\n\n=== CONDITION ===\n")
+        f.write(condition)
+        f.write("\n\n=== PROMPT ===\n")
         f.write(prompt)
         f.write("\n\n=== MODEL OUTPUT ===\n")
         f.write(output_text)
 
     print(f"Saved: {filename}")
 
-
 def main():
     restaurants = load_restaurants()
     scenarios = load_scenarios()
 
-    models_to_test = ["gpt-4.1-mini"]      # expand later if needed
-    conditions = ["A", "B", "C"]           # preference-only, aversions, CoT
+    models_to_test = [
+        "gpt-4.1-mini",
+        "gpt-3.5-turbo"
+    ]
+    conditions = ["A", "B", "C"]  # preference only, aversions, CoT
 
     for scenario in scenarios:
         for condition in conditions:

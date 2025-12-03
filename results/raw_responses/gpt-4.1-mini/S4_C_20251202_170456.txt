@@ -1,0 +1,81 @@
+=== MODEL ===
+gpt-4.1-mini
+
+=== SCENARIO ID ===
+S4
+
+=== CONDITION ===
+C
+
+=== PROMPT ===
+
+You are a careful restaurant recommendation assistant.
+
+Here is a list of available restaurants:
+- Golden Lotus | rating 4.6/5 | price $$ | neighborhood: Mount Vernon | categories: Vietnamese, Vegetarian | tags: romantic, quiet | wheelchair accessible, serves alcohol, noise level: quiet
+- Harbor Flame Grill | rating 4.2/5 | price $$ | neighborhood: Inner Harbor | categories: American, Barbecue | tags: family, kid-friendly | dog-friendly, outdoor seating, wheelchair accessible, kid-friendly, serves alcohol, noise level: moderate
+- Charm City Thai | rating 4.8/5 | price $$ | neighborhood: Federal Hill | categories: Thai | tags: authentic, spicy | wheelchair accessible, serves alcohol, spicy-focused, noise level: moderate
+- Bayfront Bistro | rating 4.4/5 | price $$$ | neighborhood: Harbor East | categories: Seafood, American | tags: upscale, romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: moderate
+- The Spicy Spoon | rating 4.1/5 | price $$ | neighborhood: Charles Village | categories: Indian, Szechuan | tags: authentic, spicy | serves alcohol, spicy-focused, noise level: moderate
+- Dockside Pub & Grill | rating 4.0/5 | price $$ | neighborhood: Fells Point | categories: Pub, American | tags: sports, bar, lively | dog-friendly, outdoor seating, wheelchair accessible, serves alcohol, noise level: loud
+- Little India Palace | rating 4.5/5 | price $$ | neighborhood: Hampden | categories: Indian, Vegetarian | tags: authentic | wheelchair accessible, serves alcohol, spicy-focused, noise level: quiet
+- Fells Point Cantina | rating 4.3/5 | price $$ | neighborhood: Fells Point | categories: Mexican | tags: touristy, lively | dog-friendly, outdoor seating, kid-friendly, serves alcohol, noise level: loud
+- Urban Greens Café | rating 4.7/5 | price $ | neighborhood: Station North | categories: Healthy, Vegetarian, Vegan | tags: casual | outdoor seating, wheelchair accessible, kid-friendly, noise level: moderate
+- Mandarin Harbor | rating 4.6/5 | price $$$$ | neighborhood: Harbor East | categories: Chinese, Seafood | tags: formal, upscale | wheelchair accessible, serves alcohol, noise level: quiet
+- Portside Tacos | rating 4.0/5 | price $ | neighborhood: Canton | categories: Mexican, Casual | tags: casual, fast-casual | dog-friendly, outdoor seating, kid-friendly, serves alcohol, noise level: moderate, chain restaurant
+- Riverside Bistro | rating 4.5/5 | price $$$ | neighborhood: Riverside | categories: American, Brunch | tags: date-night, romantic | outdoor seating, wheelchair accessible, serves alcohol, noise level: moderate
+- Harborview Sports Bar | rating 4.1/5 | price $$ | neighborhood: Inner Harbor | categories: Sports Bar, Pub | tags: sports, bar, lively | dog-friendly, serves alcohol, noise level: loud
+- Green Leaf Deli | rating 4.6/5 | price $ | neighborhood: Hampden | categories: Healthy, Vegetarian | tags: casual | wheelchair accessible, kid-friendly, noise level: quiet
+- Baltimore Brew & Bites | rating 4.3/5 | price $$ | neighborhood: Locust Point | categories: American, Cafe | tags: casual, lively | dog-friendly, outdoor seating, wheelchair accessible, kid-friendly, serves alcohol, noise level: moderate
+- La Terraza Tapas | rating 4.7/5 | price $$$ | neighborhood: Harbor East | categories: Spanish, Tapas | tags: romantic, date-night | outdoor seating, wheelchair accessible, serves alcohol, noise level: quiet
+- Neighborhood Noodles | rating 4.2/5 | price $ | neighborhood: Towson | categories: Asian Fusion | tags: casual, fast-casual | wheelchair accessible, kid-friendly, noise level: moderate, chain restaurant
+- Quiet Corner Café | rating 4.4/5 | price $ | neighborhood: Charles Village | categories: Cafe, Bakery | tags: quiet, study-spot | wheelchair accessible, noise level: quiet
+- Family Table Diner | rating 4.0/5 | price $ | neighborhood: Parkville | categories: Diner, American | tags: family, kid-friendly | wheelchair accessible, kid-friendly, noise level: moderate
+- Spice Route Grill | rating 4.5/5 | price $$ | neighborhood: Remington | categories: Indian, Middle Eastern | tags: authentic, spicy | outdoor seating, wheelchair accessible, serves alcohol, spicy-focused, noise level: moderate
+
+User description: Wants a place to watch the game with a sports-bar vibe but really dislikes very loud and rowdy environments.
+
+User preferences: {'categories_any_of': ['Sports Bar', 'Pub'], 'tags_any_of': ['sports', 'bar', 'lively'], 'min_rating': 4.0}
+User aversions: {'noise_level_any_of': ['loud'], 'tags_any_of': ['rowdy']}
+
+First, think step-by-step in bullet points:
+1. Restate preferences and aversions.
+2. Filter restaurants based on aversions (explaining which ones you remove and why).
+3. From the remaining restaurants, select the top 5 that best satisfy preferences.
+
+Then, at the VERY END, output ONLY valid JSON on a SINGLE LINE:
+{"recommendations": ["Name1", "Name2", "Name3", "Name4", "Name5"]}
+
+
+=== MODEL OUTPUT ===
+- Preferences: The user wants a place with a sports-bar vibe, specifically categories including Sports Bar or Pub, with tags like sports, bar, lively, and a minimum rating of 4.0.
+- Aversions: The user dislikes very loud and rowdy environments, so restaurants with noise level "loud" or tags including "rowdy" should be filtered out.
+
+Step 2: Filter based on aversions:
+- Dockside Pub & Grill: noise level is loud → remove.
+- Fells Point Cantina: noise level is loud → remove.
+- Harborview Sports Bar: noise level is loud → remove.
+There are no mentions of "rowdy" tags explicitly in any restaurant, so no further filtering for that.
+
+Step 3: From remaining, select those in categories Sports Bar or Pub, with tags sports, bar, lively, minimum rating 4.0:
+- Dockside Pub & Grill was removed.
+- Harborview Sports Bar was removed.
+- Harbor Flame Grill: categories American, Barbecue—not Sports Bar or Pub → exclude.
+- No other restaurant is specifically Sports Bar or Pub with sports, bar, lively tags except:
+After filtering, we have no Sports Bar or Pub options left that meet the noise level criteria.
+
+Therefore, the only matching restaurant is Harbor Flame Grill, which has tags family, kid-friendly, and moderate noise, but not specifically sports bar or pub.
+
+Given no perfect matches, check if any pubs or sports bars have moderate noise and the rest preferences:
+- There is no Pub or Sports Bar with moderate noise except Dockside Pub (loud), Harborview Sports Bar (loud).
+Hence, no strictly fitting options.
+
+The conclusion is that no restaurants strictly match all preferences and aversions.
+
+Since the user wants a sports bar vibe but dislikes loud environments, recommend none or possibly Harbor Flame Grill as a compromise (it is moderately noisy, family-friendly, serves alcohol, dog-friendly, outdoor seating).
+
+But as per instruction, only include those that satisfy the filters.
+
+Hence:
+
+{"recommendations": []}
