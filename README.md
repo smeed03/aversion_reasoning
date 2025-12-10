@@ -56,7 +56,6 @@ Cuisine & neighborhood diversity
 
 
 ## Running Analysis
-1. Analyze results (terminal)
 
 From root directory:
 
