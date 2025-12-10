@@ -6,6 +6,7 @@ conditions to investigate how well they filter, generate, and justify recommenda
 
 ## Project Structure
 
+'''bash
 aversion_reasoning/
 │
 ├── data/
@@ -27,6 +28,7 @@ aversion_reasoning/
 │
 ├── requirements.txt             # Dependencies
 └── README.md
+'''
 
 
 ## Experiments Overview
