@@ -37,24 +37,24 @@ We test:
 
 Two LLMs:
 
-gpt-3.5-turbo
-gpt-4.1-mini
+- gpt-3.5-turbo
+- gpt-4.1-mini
 
 Six scenarios (S1–S6) with different user constraints
 
 Three prompting conditions:
 
-A: Simple recommendation
-B: Explicit aversions
-C: Chain-of-thought
+- A: Simple recommendation
+- B: Explicit aversions
+- C: Chain-of-thought
 
 Metrics recorded:
 
-Preference accuracy
-Aversion accuracy
-Joint accuracy
-Reasoning quality score
-Cuisine & neighborhood diversity
+- Preference accuracy
+- Aversion accuracy
+- Joint accuracy
+- Reasoning quality score
+- Cuisine & neighborhood diversity
 
 
 ## Running Analysis
@@ -66,10 +66,10 @@ python analyze_results.py
 
 This loads results/annotated_results.csv and prints:
 
-overall accuracy metrics
-breakdowns by model
-breakdowns by scenario
-breakdowns by prompting conditions
+- overall accuracy metrics
+- breakdowns by model
+- breakdowns by scenario
+- breakdowns by prompting conditions
 
 
 ## Generate Visualizations
@@ -78,10 +78,10 @@ Open notebooks/exploration.ipynb
 
 Run all cells to output:
 
-accuracy bar graphs
-scenario difficulty analysis
-interaction between models and conditions
-diversity visualizations
+- accuracy bar graphs
+- scenario difficulty analysis
+- interaction between models and conditions
+- diversity visualizations
 
 
 ## Installation
