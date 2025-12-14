@@ -1,7 +1,7 @@
 [
   {
     "id": "S1",
-    "description": "Vegetarian-friendly, mid-price, dislikes dog-friendly and bar-type places",
+    "description": "Vegetarian-friendly, mid-price, dislikes dog-friendly and bar-type places.",
     "preferences": {
       "categories_any_of": ["Vegetarian", "Vegan", "Healthy"],
       "price_in": ["$", "$$"],
@@ -9,16 +9,17 @@
     },
     "aversions": {
       "dog_friendly": true,
-      "categories_any_of": ["Sports Bar", "Bar", "Pub"]
+      "categories_any_of": ["Sports Bar", "Pub", "Bar"],
+      "tags_any_of": ["bar", "sports"]
     }
   },
   {
     "id": "S2",
-    "description": "Romantic date, wants outdoor seating, dislikes kid-friendly and chain restaurants",
+    "description": "Romantic date, wants outdoor seating and a higher-end feel, dislikes kid-friendly places and chains.",
     "preferences": {
       "tags_any_of": ["romantic", "date-night"],
       "outdoor_seating": true,
-      "price_in": ["$$", "$$$"],
+      "price_in": ["$$", "$$$", "$$$$"],
       "min_rating": 4.3
     },
     "aversions": {
@@ -28,15 +29,53 @@
   },
   {
     "id": "S3",
-    "description": "Wants spicy and authentic food, avoids touristy or formal places",
+    "description": "Wants spicy and authentic food (Thai/Indian/Szechuan), avoids touristy or overly formal places.",
     "preferences": {
       "categories_any_of": ["Thai", "Indian", "Szechuan"],
+      "min_rating": 4.0,
+      "spicy_focus": true
+    },
+    "aversions": {
+      "tags_any_of": ["touristy", "formal", "upscale"],
+      "price_not_in": ["$$$$"]
+    }
+  },
+  {
+    "id": "S4",
+    "description": "Wants a place to watch the game with a sports-bar vibe but really dislikes very loud and rowdy environments.",
+    "preferences": {
+      "categories_any_of": ["Sports Bar", "Pub"],
+      "tags_any_of": ["sports", "bar", "lively"],
       "min_rating": 4.0
     },
     "aversions": {
-      "tags_any_of": ["touristy", "upscale", "formal"],
-      "price_not_in": ["$$$$"]
+      "noise_level_any_of": ["loud"],
+      "tags_any_of": ["rowdy"]
+    }
+  },
+  {
+    "id": "S5",
+    "description": "Needs a quiet, wheelchair-accessible place to talk, dislikes loud or cramped spots and does not care about alcohol.",
+    "preferences": {
+      "noise_level_any_of": ["quiet"],
+      "wheelchair_accessible": true,
+      "min_rating": 4.0
+    },
+    "aversions": {
+      "noise_level_any_of": ["loud"],
+      "tags_any_of": ["lively", "sports"]
+    }
+  },
+  {
+    "id": "S6",
+    "description": "On a tight budget, wants casual or fast-casual, prefers cheap places, but strongly dislikes big chains.",
+    "preferences": {
+      "price_in": ["$"],
+      "tags_any_of": ["casual", "fast-casual"],
+      "min_rating": 4.0
+    },
+    "aversions": {
+      "is_chain": true
     }
   }
 ]
-
